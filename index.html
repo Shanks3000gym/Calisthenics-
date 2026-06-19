@@ -6,20 +6,20 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Cali Tracker">
-<meta name="theme-color" content="#0f1a0f">
+<meta name="theme-color" content="#0a0f1a">
 <title>Cali Tracker</title>
 <style>
 :root {
-  --green: #4ade80;
-  --green-dark: #16a34a;
-  --green-dim: #1a3a1a;
-  --green-mid: #22c55e;
-  --bg: #0a120a;
-  --surface: #121f12;
-  --surface2: #1a2e1a;
-  --border: #2a3f2a;
-  --text: #e8f5e8;
-  --muted: #7a9a7a;
+  --green: #60a5fa;
+  --green-dark: #2563eb;
+  --green-dim: #1e2d4a;
+  --green-mid: #3b82f6;
+  --bg: #0a0f1a;
+  --surface: #111827;
+  --surface2: #1a2540;
+  --border: #1e3a5f;
+  --text: #f0f6ff;
+  --muted: #6b8ab0;
   --radius: 14px;
   --radius-sm: 8px;
 }
@@ -63,7 +63,7 @@ html, body { height: 100%; overflow: hidden; font-family: -apple-system, BlinkMa
 .day-type { font-size: 12px; color: var(--muted); margin-top: 2px; }
 .day-date { font-size: 11px; color: var(--green); margin-top: 2px; }
 .day-check { width: 30px; height: 30px; border-radius: 50%; border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 14px; flex-shrink: 0; }
-.day-card.done .day-check { background: var(--green-mid); border-color: var(--green-mid); color: #0a120a; font-weight: 700; }
+.day-card.done .day-check { background: var(--green-mid); border-color: var(--green-mid); color: #0a0f1a; font-weight: 700; }
 
 .exercises { display: none; border-top: 1px solid var(--border); }
 .day-card.open .exercises { display: block; }
@@ -73,7 +73,7 @@ html, body { height: 100%; overflow: hidden; font-family: -apple-system, BlinkMa
 .ex-name { font-size: 14px; font-weight: 500; }
 .ex-target { font-size: 11px; color: var(--muted); margin-top: 1px; }
 .ex-done-btn { width: 26px; height: 26px; border-radius: 50%; border: 1.5px solid var(--border); background: none; color: var(--muted); font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; flex-shrink: 0; }
-.ex-done-btn.active { background: var(--green-mid); border-color: var(--green-mid); color: #0a120a; }
+.ex-done-btn.active { background: var(--green-mid); border-color: var(--green-mid); color: #0a0f1a; }
 .ex-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .ex-field { display: flex; flex-direction: column; gap: 4px; }
 .ex-field label { font-size: 10px; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; }
@@ -87,7 +87,7 @@ html, body { height: 100%; overflow: hidden; font-family: -apple-system, BlinkMa
 .rpe-label { font-size: 12px; color: var(--muted); flex-shrink: 0; }
 .rpe-btns { display: flex; gap: 5px; flex-wrap: wrap; }
 .rpe-btn { width: 30px; height: 30px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface2); color: var(--muted); font-size: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; }
-.rpe-btn.sel { color: #0a120a; font-weight: 700; }
+.rpe-btn.sel { color: #0a0f1a; font-weight: 700; }
 .rpe-btn[data-v="1"].sel,.rpe-btn[data-v="2"].sel,.rpe-btn[data-v="3"].sel { background: #22c55e; border-color: #22c55e; }
 .rpe-btn[data-v="4"].sel,.rpe-btn[data-v="5"].sel,.rpe-btn[data-v="6"].sel { background: #fbbf24; border-color: #fbbf24; }
 .rpe-btn[data-v="7"].sel,.rpe-btn[data-v="8"].sel { background: #fb923c; border-color: #fb923c; }
