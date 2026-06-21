@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Athletic Physique">
+<meta name="theme-color" content="#05080f">
+<meta name="description" content="Muskelaufbau & Athletik – ohne Fitnessstudio">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="styles.css">
+<title>Athletic Physique</title>
+</head>
+<body>
+
+<!-- ══ ONBOARDING ══════════════════════════════════════ -->
+<div id="onboarding">
+  <div class="ob-logo">⚡</div>
+  <div class="ob-title">Athletic Physique</div>
+  <div class="ob-sub">Muskelaufbau · Fettabbau · Athletik<br>Nur mit Körpergewicht und Klimmzugstange</div>
+  <div class="ob-q">Was ist dein Hauptziel?</div>
+  <div class="ob-options">
+    <div class="ob-opt" data-goal="muscle"><span class="ob-opt-icon">💪</span>Muskelaufbau</div>
+    <div class="ob-opt" data-goal="fat"><span class="ob-opt-icon">🔥</span>Fettabbau</div>
+    <div class="ob-opt" data-goal="football"><span class="ob-opt-icon">⚽</span>Athletischer Fußballer</div>
+    <div class="ob-opt" data-goal="fitness"><span class="ob-opt-icon">🏃</span>Allgemeine Fitness</div>
+  </div>
+</div>
+
+<!-- ══ APP ═════════════════════════════════════════════ -->
+<div id="app">
+  <div id="screen">
+
+    <!-- ── DASHBOARD ─────────────────────────────────── -->
+    <div id="page-dash" class="page">
+      <div class="page-header">
+        <div class="page-label" id="d-greeting">Guten Morgen 👋</div>
+        <div class="page-title">Athletic Physique</div>
+      </div>
+
+      <!-- Hero -->
+      <div class="dash-hero">
+        <div class="dash-hero-top">
+          <div>
+            <div class="dash-greeting">Aktueller Block</div>
+            <div class="dash-name">Programm läuft 💪</div>
+          </div>
+          <div class="streak-badge">
+            <div class="streak-n" id="d-streak">0</div>
+            <div class="streak-l">WOCHEN 🔥</div>
+          </div>
+        </div>
+        <div class="dash-stats">
+          <div class="dash-stat"><div class="dash-stat-v" id="d-sessions">0</div><div class="dash-stat-l">Einheiten</div></div>
+          <div class="dash-stat"><div class="dash-stat-v" id="d-blocks">0</div><div class="dash-stat-l">Blöcke</div></div>
+          <div class="dash-stat"><div class="dash-stat-v" id="d-level">Lvl 1</div><div class="dash-stat-l">Level</div></div>
+        </div>
+      </div>
+
+      <!-- Progress ring + week -->
+      <div class="section">
+        <div class="section-title">Gesamtfortschritt</div>
+        <div class="card" style="padding:20px;display:flex;align-items:center;gap:20px">
+          <div class="ring-wrap">
+            <svg width="100" height="100" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="40" fill="none" stroke="var(--card3)" stroke-width="8"/>
+              <circle id="ring-circle" cx="50" cy="50" r="40" fill="none" stroke="var(--accent-b)" stroke-width="8" stroke-linecap="round" stroke-dasharray="251" stroke-dashoffset="251" style="transition:stroke-dashoffset 0.8s ease"/>
+            </svg>
+            <div class="ring-center">
+              <div class="ring-pct" id="d-pct">0%</div>
+              <div class="ring-lbl">Gesamt</div>
+            </div>
+          </div>
+          <div style="flex:1">
+            <div style="font-size:13px;color:var(--text2);margin-bottom:10px">Diese Woche</div>
+            <div class="week-dots" id="d-dots"></div>
+            <div style="font-size:12px;color:var(--muted);margin-top:8px">12 Blöcke · 36 Einheiten</div>
+            <div style="font-size:12px;color:var(--text2);margin-top:4px" id="d-weight">— kg</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Today -->
+      <div class="section">
+        <div class="section-title">Heutiges Training <span onclick="nav('train')" style="cursor:pointer">Öffnen →</span></div>
+        <div class="today-card" onclick="nav('train')">
+          <div class="today-inner">
+            <div class="today-tag" id="d-today-tag">Block 1 · Tag A</div>
+            <div class="today-title" id="d-today-title">Oberkörper – Brust & Rücken</div>
+            <div class="today-sub">Push + Pull · ~35 Min</div>
+            <div class="today-exlist" id="d-today-exlist"></div>
+            <div class="today-footer">
+              <div class="today-duration">⏱ 30–40 Min · 6 Übungen</div>
+              <div class="pill blue">Jetzt starten →</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick tips -->
+      <div class="section">
+        <div class="section-title">Heutiger Fokus</div>
+        <div class="card" style="padding:16px;display:flex;gap:12px;align-items:flex-start">
+          <div style="font-size:24px">💡</div>
+          <div>
+            <div style="font-size:14px;font-weight:700;margin-bottom:4px">Eiweiß nicht vergessen</div>
+            <div style="font-size:12px;color:var(--text2);line-height:1.6">Morgens einen ISO Whey Shake — dann bist du gut versorgt für den Tag. Ziel: 140–160g Eiweiß täglich für optimalen Muskelaufbau.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── TRAINING ───────────────────────────────────── -->
+    <div id="page-train" class="page">
+      <div class="page-header">
+        <div class="page-label">12-Wochen Programm</div>
+        <div class="page-title">Training</div>
+      </div>
+
+      <div class="block-nav">
+        <button class="block-nav-btn" id="t-prev">‹</button>
+        <div class="block-meta">
+          <div class="block-title" id="t-block-title">Block 1 / 12</div>
+          <div class="block-sub" id="t-block-sub">0 von 3 Einheiten</div>
+          <div class="phase-tag ph1" id="t-phase">● Phase 1 – Fundament</div>
+        </div>
+        <button class="block-nav-btn" id="t-next">›</button>
+      </div>
+
+      <div class="prog-wrap">
+        <div class="prog-fill-bar" id="t-prog" style="width:0%"></div>
+      </div>
+
+      <div class="adapt-banner">
+        <span style="font-size:18px">🧠</span>
+        <span>Ab Block 2 passen sich die Vorgaben automatisch an deine Leistung an. Trag deine Wdh ein!</span>
+      </div>
+
+      <div id="t-day-list"></div>
+
+      <!-- Library teaser -->
+      <div style="margin:0 16px;padding:16px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);display:flex;align-items:center;gap:12px;cursor:pointer" onclick="nav('library')">
+        <div style="font-size:24px">📚</div>
+        <div>
+          <div style="font-size:14px;font-weight:700">Übungsbibliothek</div>
+          <div style="font-size:12px;color:var(--text2);margin-top:2px">Alle Übungen mit Anleitung & Tipps</div>
+        </div>
+        <div style="margin-left:auto;color:var(--muted)">›</div>
+      </div>
+    </div>
+
+    <!-- ── LIBRARY ────────────────────────────────────── -->
+    <div id="page-library" class="page">
+      <div class="page-header">
+        <div class="page-label">Alle Übungen</div>
+        <div class="page-title">Bibliothek</div>
+      </div>
+
+      <div class="lib-search">
+        <input id="lib-search-inp" placeholder="Übung suchen...">
+      </div>
+
+      <div class="lib-filter">
+        <button class="lib-filter-btn active" data-f="Alle">Alle</button>
+        <button class="lib-filter-btn" data-f="Brust">Brust</button>
+        <button class="lib-filter-btn" data-f="Rücken">Rücken</button>
+        <button class="lib-filter-btn" data-f="Trizeps">Trizeps</button>
+        <button class="lib-filter-btn" data-f="Core">Core</button>
+        <button class="lib-filter-btn" data-f="Fatburn">Fatburn</button>
+      </div>
+
+      <div id="lib-cards"></div>
+    </div>
+
+    <!-- ── PROGRESS ───────────────────────────────────── -->
+    <div id="page-progress" class="page">
+      <div class="page-header">
+        <div class="page-label">Dein Fortschritt</div>
+        <div class="page-title">Statistiken</div>
+      </div>
+
+      <div class="progress-hero">
+        <div class="ph-label">Einheiten gesamt</div>
+        <div class="ph-val" id="p-total">0</div>
+        <div class="ph-sub" id="p-sub">Starte heute!</div>
+      </div>
+
+      <div class="section">
+        <div class="stat-grid-3">
+          <div class="stat-box"><div class="sv" id="p-sessions-stat">0</div><div class="sl">Einheiten</div></div>
+          <div class="stat-box"><div class="sv" id="p-blocks-stat">0</div><div class="sl">Blöcke</div></div>
+          <div class="stat-box"><div class="sv" id="p-streak-stat">0</div><div class="sl">Streak</div></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Einheiten pro Block</div>
+        <div class="chart-card">
+          <div class="chart-bars" id="p-chart-bars"></div>
+          <div class="c-lbls" id="p-chart-lbls"></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Persönliche Rekorde</div>
+        <div class="card" style="padding:0 16px">
+          <div id="p-pr-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── BODY DATA ──────────────────────────────────── -->
+    <div id="page-body" class="page">
+      <div class="page-header">
+        <div class="page-label">Körperdaten</div>
+        <div class="page-title">Messwerte</div>
+      </div>
+
+      <div class="section">
+        <div class="card" style="padding:20px;text-align:center">
+          <div style="font-size:13px;color:var(--text2);margin-bottom:6px">AKTUELLES GEWICHT</div>
+          <div><span class="body-big" id="b-weight-val">—</span><span class="body-unit"> kg</span></div>
+          <div style="font-size:12px;color:var(--muted);margin-top:4px">Ziel: 76–78 kg</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Gewicht eintragen</div>
+        <div class="card" style="padding:16px">
+          <div style="display:flex;gap:8px;margin-bottom:8px">
+            <input class="inp" id="b-wi" type="number" placeholder="79.5" step="0.1" min="40" max="250" style="flex:1">
+            <button class="btn-sm blue" id="b-wi-btn" style="padding:11px 16px">Eintragen</button>
+          </div>
+          <div style="font-size:11px;color:var(--muted)">Heute · <span id="wi-date"></span></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Körpermaße</div>
+        <div class="measure-grid" id="b-measures"></div>
+        <div class="card" style="padding:16px;display:flex;flex-direction:column;gap:12px">
+          <div>
+            <div class="inp-label">Bauchumfang (cm)</div>
+            <div class="measure-inp-row">
+              <input class="inp" id="m-waist" type="number" placeholder="85">
+              <button class="btn-sm blue" id="m-waist-btn">✓</button>
+            </div>
+          </div>
+          <div>
+            <div class="inp-label">Brustumfang (cm)</div>
+            <div class="measure-inp-row">
+              <input class="inp" id="m-chest" type="number" placeholder="95">
+              <button class="btn-sm blue" id="m-chest-btn">✓</button>
+            </div>
+          </div>
+          <div>
+            <div class="inp-label">Oberarm (cm)</div>
+            <div class="measure-inp-row">
+              <input class="inp" id="m-arm" type="number" placeholder="35">
+              <button class="btn-sm blue" id="m-arm-btn">✓</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Gewichtsverlauf</div>
+        <div class="card" style="padding:0 16px">
+          <div id="b-weight-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── ACHIEVEMENTS ───────────────────────────────── -->
+    <div id="page-achieve" class="page">
+      <div class="page-header">
+        <div class="page-label">Deine Erfolge</div>
+        <div class="page-title">Achievements</div>
+      </div>
+
+      <div class="section">
+        <div class="xp-bar-wrap">
+          <div class="xp-top">
+            <div><div class="xp-level">Level <span id="a-level">1</span></div><div style="font-size:12px;color:var(--muted);margin-top:2px" id="a-total-xp">0 XP</div></div>
+            <div class="level-label" id="a-level-name">Rookie</div>
+          </div>
+          <div class="prog-bar"><div class="prog-fill" id="a-xp-bar" style="width:0%"></div></div>
+          <div style="font-size:11px;color:var(--muted);margin-top:6px" id="a-xp">0 / 200 XP</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Erfolge</div>
+        <div class="achieve-grid" id="a-grid"></div>
+      </div>
+    </div>
+
+    <!-- ── SETTINGS ───────────────────────────────────── -->
+    <div id="page-settings" class="page">
+      <div class="page-header">
+        <div class="page-label">Einstellungen</div>
+        <div class="page-title">Settings</div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Profil</div>
+        <div class="card" style="padding:0 16px">
+          <div class="settings-row">
+            <div><div class="settings-label">Ziel</div><div class="settings-sub" id="s-goal">—</div></div>
+            <div class="pill blue" onclick="S.onboarded=false;save();location.reload();" style="cursor:pointer">Ändern</div>
+          </div>
+          <div class="settings-row">
+            <div><div class="settings-label">Version</div><div class="settings-sub" id="s-version">v1.0</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Daten</div>
+        <div class="card" style="padding:0 16px">
+          <div class="settings-row">
+            <div><div class="settings-label">Daten exportieren</div><div class="settings-sub">JSON-Backup herunterladen</div></div>
+            <div class="pill green" onclick="exportData()" style="cursor:pointer">Export</div>
+          </div>
+          <div class="settings-row">
+            <div><div class="settings-label" style="color:var(--red)">App zurücksetzen</div><div class="settings-sub">Alle Daten löschen</div></div>
+            <div class="pill red" onclick="resetApp()" style="cursor:pointer">Reset</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="card" style="padding:16px;text-align:center">
+          <div style="font-size:13px;color:var(--muted)">Athletic Physique · Made with 💪</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:4px">Muskelaufbau ohne Fitnessstudio</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /screen -->
+
+  <!-- ── BOTTOM NAV ──────────────────────────────────── -->
+  <nav class="nav">
+    <button class="nav-btn active" data-page="dash"><span class="ni">🏠</span>Dashboard</button>
+    <button class="nav-btn" data-page="train"><span class="ni">💪</span>Training</button>
+    <button class="nav-btn" data-page="progress"><span class="ni">📈</span>Fortschritt</button>
+    <button class="nav-btn" data-page="body"><span class="ni">⚖️</span>Körper</button>
+    <button class="nav-btn" data-page="achieve"><span class="ni">🏆</span>Erfolge</button>
+    <button class="nav-btn" data-page="settings"><span class="ni">⚙️</span>Settings</button>
+  </nav>
+</div><!-- /app -->
+
+<!-- ── EXERCISE DETAIL OVERLAY ──────────────────────── -->
+<div class="ex-detail" id="ex-detail">
+  <div class="ex-detail-header">
+    <button class="ex-back-btn" onclick="closeExDetail()">←</button>
+    <div>
+      <div style="font-size:14px;font-weight:700" id="ex-detail-name">Übung</div>
+      <div id="ex-detail-muscle"></div>
+    </div>
+  </div>
+  <div class="ex-detail-body">
+    <div class="ex-anim" id="ex-detail-icon">💪</div>
+    <div class="ex-detail-name" id="ex-detail-name2"></div>
+    <div class="ex-detail-section">
+      <div class="ex-detail-section-title">Ausführung</div>
+      <div id="ex-detail-steps"></div>
+    </div>
+    <div class="ex-detail-section">
+      <div class="ex-detail-section-title">Häufige Fehler</div>
+      <div id="ex-detail-errors"></div>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
