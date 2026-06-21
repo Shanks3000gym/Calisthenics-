@@ -9,26 +9,13 @@
 <meta name="theme-color" content="#05080f">
 <title>Pino Fit</title>
 <style>
-:root {
-  --accent: #4f8ef7;
-  --accent-bright: #7aabff;
-  --accent-dim: rgba(79,142,247,0.12);
-  --accent-glow: rgba(79,142,247,0.25);
-  --bg: #05080f;
-  --card: #0c1120;
-  --card2: #111827;
-  --card3: #182035;
-  --line: rgba(255,255,255,0.07);
-  --line2: rgba(79,142,247,0.18);
-  --text: #eef2ff;
-  --text2: #8899bb;
-  --muted: #3d5070;
-  --green: #2dd4a0;
-  --amber: #f5b942;
-  --red: #f06464;
-  --r: 14px;
-  --r-sm: 9px;
-  --r-xs: 6px;
+:root{
+  --accent:#4f8ef7;--accent-bright:#7aabff;--accent-dim:rgba(79,142,247,0.12);--accent-glow:rgba(79,142,247,0.25);
+  --bg:#05080f;--card:#0c1120;--card2:#111827;--card3:#182035;
+  --line:rgba(255,255,255,0.07);--line2:rgba(79,142,247,0.18);
+  --text:#eef2ff;--text2:#8899bb;--muted:#3d5070;
+  --green:#2dd4a0;--amber:#f5b942;--red:#f06464;
+  --r:14px;--r-sm:9px;--r-xs:6px
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html,body{height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',sans-serif;background:var(--bg);color:var(--text)}
@@ -36,7 +23,7 @@ html,body{height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFo
 .scroll{flex:1;overflow-y:auto;padding:0 14px 96px;-webkit-overflow-scrolling:touch}
 .scroll::-webkit-scrollbar{display:none}
 
-/* ── Header ── */
+/* Header */
 .hdr{padding:54px 16px 0;position:relative}
 .hdr-glow{position:absolute;top:-40px;left:50%;transform:translateX(-50%);width:280px;height:180px;background:radial-gradient(ellipse,rgba(79,142,247,0.18) 0%,transparent 70%);pointer-events:none}
 .hdr-top{display:flex;justify-content:space-between;align-items:flex-start;position:relative}
@@ -45,8 +32,6 @@ html,body{height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFo
 .streak-box{background:var(--card2);border:1px solid var(--line2);border-radius:12px;padding:9px 14px;text-align:center}
 .streak-n{font-size:22px;font-weight:800;color:var(--accent-bright);line-height:1}
 .streak-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:0.06em}
-
-/* ── Pill stats ── */
 .pill-row{display:flex;gap:8px;margin:14px 0 0;overflow-x:auto;padding-bottom:2px}
 .pill-row::-webkit-scrollbar{display:none}
 .pill{background:var(--card);border:1px solid var(--line);border-radius:30px;padding:8px 16px;display:flex;align-items:center;gap:8px;white-space:nowrap;flex-shrink:0}
@@ -54,18 +39,18 @@ html,body{height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFo
 .pill-val{font-size:14px;font-weight:700;color:var(--accent-bright)}
 .pill-lbl{font-size:11px;color:var(--muted)}
 
-/* ── Tabs ── */
+/* Tabbar */
 .tabbar{position:absolute;bottom:0;left:0;right:0;display:flex;padding:8px 12px 26px;gap:2px;background:linear-gradient(to top,var(--bg) 75%,transparent);border-top:1px solid var(--line)}
-.tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 4px;border:none;background:none;color:var(--muted);cursor:pointer;font-size:10px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;font-family:inherit;border-radius:var(--r-sm);transition:color 0.15s}
+.tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 4px;border:none;background:none;color:var(--muted);cursor:pointer;font-size:10px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;font-family:inherit;border-radius:var(--r-sm)}
 .tab .ico{font-size:19px;line-height:1}
 .tab.active{color:var(--accent-bright)}
 
-/* ── Views ── */
+/* Views */
 .view{display:none}.view.active{display:block}
 .sec-title{font-size:17px;font-weight:700;letter-spacing:-0.3px;margin:20px 0 4px}
 .sec-sub{font-size:12px;color:var(--muted);margin-bottom:14px}
 
-/* ── Week nav ── */
+/* Week nav */
 .wk-nav{display:flex;align-items:center;gap:10px;margin-bottom:8px}
 .wk-btn{width:34px;height:34px;border-radius:50%;background:var(--card2);border:1px solid var(--line);color:var(--text2);font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .wk-meta{flex:1}
@@ -76,15 +61,14 @@ html,body{height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFo
 .ph2{background:rgba(79,142,247,0.12);color:var(--accent-bright)}
 .ph3{background:rgba(245,185,66,0.12);color:var(--amber)}
 
-/* ── Progress bar ── */
+/* Progress */
 .prog-wrap{height:3px;background:var(--card3);border-radius:2px;margin-bottom:18px;overflow:hidden}
 .prog-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-bright));border-radius:2px;transition:width 0.5s cubic-bezier(.4,0,.2,1)}
 
-/* ── Adaptive notice ── */
+/* Adapt notice */
 .adapt-notice{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line2);border-radius:var(--r-sm);padding:11px 14px;margin-bottom:14px;font-size:12px;color:var(--text2)}
-.adapt-icon{font-size:18px;flex-shrink:0}
 
-/* ── Day cards ── */
+/* Day cards */
 .day-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);margin-bottom:10px;overflow:hidden;transition:border-color .2s,box-shadow .2s}
 .day-card.done{border-color:var(--line2);box-shadow:0 0 24px rgba(79,142,247,0.07)}
 .day-card.open{border-color:rgba(79,142,247,0.22)}
@@ -102,11 +86,12 @@ html,body{height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFo
 .day-card.done .chev{background:var(--accent);color:#fff}
 .ex-pill{font-size:10px;color:var(--muted);background:var(--card3);padding:2px 8px;border-radius:10px}
 
-/* ── Exercises ── */
+/* Exercises */
 .exercises{display:none;border-top:1px solid var(--line)}
 .day-card.open .exercises{display:block}
 .ex-item{padding:14px 15px;border-bottom:1px solid var(--line)}
 .ex-item:last-child{border-bottom:none}
+.ex-group-label{font-size:10px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);padding:10px 15px 0;margin-bottom:-4px}
 .ex-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:10px}
 .ex-left{flex:1}
 .ex-name{font-size:14px;font-weight:600}
@@ -114,6 +99,7 @@ html,body{height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFo
 .target-pill{font-size:11px;color:var(--accent-bright);background:var(--accent-dim);padding:3px 9px;border-radius:8px;font-weight:600}
 .adapt-pill{font-size:10px;color:var(--amber);background:rgba(245,185,66,0.1);padding:2px 7px;border-radius:6px;font-weight:600}
 .ex-tip{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.5}
+.prev-row{font-size:11px;color:var(--text2);margin-top:3px}
 .ex-chk{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--line);background:none;color:var(--muted);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;flex-shrink:0;margin-top:2px}
 .ex-chk.done{background:var(--green);border-color:var(--green);color:#050f0a;font-weight:800}
 .ex-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
@@ -127,23 +113,23 @@ html,body{height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFo
 .ex-ta:focus{border-color:var(--accent)}
 .ex-ta::placeholder{color:var(--muted)}
 
-/* ── Footer ── */
+/* Footer */
 .day-footer{padding:14px 15px;border-top:1px solid var(--line);background:var(--card2);display:flex;flex-direction:column;gap:13px}
 .rpe-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px}
 .rpe-title{font-size:12px;font-weight:600;color:var(--text2)}
 .rpe-hint{font-size:11px;color:var(--muted)}
 .rpe-btns{display:flex;gap:3px}
-.rpe-btn{flex:1;height:32px;border-radius:5px;border:1px solid var(--line);background:var(--card3);color:var(--muted);font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .12s}
+.rpe-btn{flex:1;height:32px;border-radius:5px;border:1px solid var(--line);background:var(--card3);color:var(--muted);font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
 .rpe-btn.sel{color:#05080f;font-weight:800}
 .rpe-btn[data-v="1"].sel,.rpe-btn[data-v="2"].sel,.rpe-btn[data-v="3"].sel{background:var(--green);border-color:var(--green)}
 .rpe-btn[data-v="4"].sel,.rpe-btn[data-v="5"].sel,.rpe-btn[data-v="6"].sel{background:var(--amber);border-color:var(--amber)}
 .rpe-btn[data-v="7"].sel,.rpe-btn[data-v="8"].sel{background:#fb923c;border-color:#fb923c}
 .rpe-btn[data-v="9"].sel,.rpe-btn[data-v="10"].sel{background:var(--red);border-color:var(--red)}
-.finish-btn{width:100%;padding:14px;background:linear-gradient(135deg,#1a47c8,var(--accent));color:#fff;border:none;border-radius:var(--r-sm);font-size:15px;font-weight:800;cursor:pointer;font-family:inherit;letter-spacing:0.01em;box-shadow:0 4px 20px rgba(79,142,247,0.28);transition:opacity .15s}
+.finish-btn{width:100%;padding:14px;background:linear-gradient(135deg,#1a47c8,var(--accent));color:#fff;border:none;border-radius:var(--r-sm);font-size:15px;font-weight:800;cursor:pointer;font-family:inherit;box-shadow:0 4px 20px rgba(79,142,247,0.28)}
 .finish-btn:active{opacity:.85}
 .done-banner{display:flex;align-items:center;justify-content:center;gap:8px;padding:11px;background:var(--accent-dim);border-radius:var(--r-sm);color:var(--accent-bright);font-size:13px;font-weight:700}
 
-/* ── Stats ── */
+/* Stats */
 .stats-hero{background:linear-gradient(135deg,#111c35,var(--card));border:1px solid var(--line2);border-radius:var(--r);padding:20px;margin-bottom:14px;position:relative;overflow:hidden}
 .stats-hero::after{content:'';position:absolute;top:-40px;right:-40px;width:130px;height:130px;background:radial-gradient(circle,var(--accent-glow),transparent 70%)}
 .sh-l{font-size:11px;color:var(--text2);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px}
@@ -156,12 +142,12 @@ html,body{height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFo
 .chart-box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
 .chart-title{font-size:13px;font-weight:600;color:var(--text2);margin-bottom:14px}
 .chart-bars{display:flex;align-items:flex-end;gap:5px;height:80px;margin-bottom:7px}
-.c-bar{flex:1;border-radius:4px 4px 0 0;min-height:3px;background:var(--card3);transition:height .4s}
+.c-bar{flex:1;border-radius:4px 4px 0 0;min-height:3px;background:var(--card3)}
 .c-bar.has{background:linear-gradient(to top,#1a47c8,var(--accent-bright))}
 .c-bar.cur{background:linear-gradient(to top,#1a47c8,#a8c8ff);box-shadow:0 0 12px var(--accent-glow)}
 .c-lbl{font-size:9px;color:var(--muted);text-align:center;flex:1}
 
-/* ── Gewicht ── */
+/* Gewicht */
 .wi-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
 .wi-row{display:flex;gap:9px}
 .wi-inp{flex:1;background:var(--card2);border:1px solid var(--line);border-radius:var(--r-sm);color:var(--text);font-size:18px;font-weight:600;padding:12px 14px;font-family:inherit;outline:none}
@@ -176,7 +162,7 @@ html,body{height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFo
 .we-del{background:none;border:none;color:var(--muted);font-size:20px;cursor:pointer;padding:0 4px;line-height:1}
 .we-trend{font-size:11px;font-weight:700;margin-left:8px}
 
-/* ── PRs ── */
+/* PRs */
 .pr-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-bottom:9px}
 .pr-row{display:flex;align-items:center;padding:13px 15px;border-bottom:1px solid var(--line);gap:12px}
 .pr-row:last-child{border-bottom:none}
@@ -187,7 +173,7 @@ html,body{height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFo
 .pr-inp{width:78px;background:var(--card2);border:1px solid var(--line);border-radius:var(--r-xs);color:var(--text);font-size:16px;font-weight:700;padding:8px 10px;font-family:inherit;outline:none;text-align:right}
 .pr-inp:focus{border-color:var(--accent)}
 
-/* ── Toast ── */
+/* Toast */
 .toast{position:fixed;bottom:96px;left:50%;transform:translateX(-50%) translateY(14px);background:var(--card2);border:1px solid var(--line2);color:var(--text);padding:11px 22px;border-radius:24px;font-size:13px;font-weight:700;opacity:0;transition:all .25s;pointer-events:none;white-space:nowrap;z-index:999;box-shadow:0 8px 30px rgba(0,0,0,.5)}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 </style>
@@ -214,7 +200,6 @@ html,body{height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFo
   </div>
 
   <div class="scroll">
-    <!-- TRAINING -->
     <div id="vt" class="view active">
       <div class="wk-nav">
         <button class="wk-btn" onclick="changeWeek(-1)">‹</button>
@@ -227,13 +212,12 @@ html,body{height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFo
       </div>
       <div class="prog-wrap"><div class="prog-fill" id="prog" style="width:0%"></div></div>
       <div class="adapt-notice">
-        <span class="adapt-icon">🧠</span>
-        <span>Die Vorgaben passen sich automatisch an deine Leistung der Vorwoche an. Trage deine Wdh ein — die App lernt mit.</span>
+        <span style="font-size:18px">🧠</span>
+        <span>Vorgaben passen sich ab Woche 2 automatisch an deine Leistung der Vorwoche an.</span>
       </div>
       <div id="day-list"></div>
     </div>
 
-    <!-- STATS -->
     <div id="vs" class="view">
       <div class="stats-hero">
         <div class="sh-l">Einheiten Gesamt</div>
@@ -253,7 +237,6 @@ html,body{height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFo
       </div>
     </div>
 
-    <!-- GEWICHT -->
     <div id="vg" class="view">
       <div class="sec-title">Gewicht</div>
       <div class="sec-sub">Ziel: 76–78 kg mit mehr Muskelmasse</div>
@@ -267,7 +250,6 @@ html,body{height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFo
       <div class="we-list" id="we-list"></div>
     </div>
 
-    <!-- PRs -->
     <div id="vp" class="view">
       <div class="sec-title">Persönliche Rekorde</div>
       <div class="sec-sub">Deine aktuellen Bestleistungen</div>
@@ -286,82 +268,103 @@ html,body{height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFo
 
 <script>
 // ═══════════════════════════════════════════════════════════
-// PINO FIT — 12-Wochen Adaptives Muskelaufbau Programm
-// Oberkörper-Fokus | Körpergewicht | Klimmzugstange
+// PINO FIT — 12-Wochen Adaptives Programm
+// Struktur: A = Oberkörper Push+Pull (Brust/Rücken/Schulter)
+//           B = Oberkörper Push+Pull (Brust/Arme/Schulter)
+//           C = Beine + Core + Fettverbrennung
+// Ziel: Brust aufbauen, Arme definieren, Bauchfett verbrennen
+// Fußball läuft parallel — Beine werden geschont
 // ═══════════════════════════════════════════════════════════
 
-// Basis-Progressions-Tabelle pro Übung (12 Wochen)
-// Format: [sätze, wdh_min, wdh_max] — wdh_max=null = feste Zahl
+// [sätze, min_wdh, max_wdh] — max_wdh null = feste Zahl (Sek oder Wdh)
 const BASE = {
-  // EINHEIT A – Push
-  'Liegestütze':           [[3,10,12],[3,12,15],[4,12,15],[4,14,16],[4,15,18],[4,16,20],[5,16,20],[5,18,22],[5,18,22],[5,20,25],[5,20,25],[5,22,28]],
-  'Diamond Push-Ups':      [[3,6,8],[3,7,9],[3,8,10],[3,9,11],[3,10,12],[4,10,12],[4,11,13],[4,12,14],[4,12,15],[4,14,16],[4,15,18],[4,15,18]],
-  'Pike Push-Ups':         [[3,6,8],[3,7,9],[3,8,10],[3,9,11],[3,10,12],[3,11,13],[4,11,13],[4,12,14],[4,12,15],[4,13,15],[4,14,16],[4,15,17]],
-  'Dips':                  [[3,6,8],[3,7,9],[3,8,10],[3,9,11],[4,8,12],[4,9,12],[4,10,13],[4,11,14],[4,12,15],[4,13,15],[5,12,15],[5,13,16]],
-  'Mountain Climbers':     [[3,20,null],[3,25,null],[3,30,null],[3,30,null],[3,35,null],[3,40,null],[4,35,null],[4,40,null],[4,45,null],[4,50,null],[4,50,null],[4,60,null]],
-  'Plank':                 [[3,25,null],[3,30,null],[3,35,null],[3,40,null],[3,45,null],[3,50,null],[4,50,null],[4,55,null],[4,60,null],[4,65,null],[4,70,null],[4,75,null]],
-  // EINHEIT B – Pull
-  'Klimmzüge':             [[3,3,5],[3,3,5],[4,4,6],[4,4,6],[4,5,7],[4,5,7],[5,6,8],[5,6,8],[5,7,9],[5,7,9],[5,8,10],[5,9,12]],
-  'Negative Klimmzüge':    [[3,5,null],[3,5,null],[3,5,null],[3,5,null],[3,4,null],[3,4,null],[3,4,null],[3,4,null],[2,4,null],[2,4,null],[2,3,null],[2,3,null]],
-  'Australische Klimmzüge':[[3,10,12],[3,12,14],[4,12,14],[4,13,15],[4,14,16],[4,15,18],[4,16,18],[4,18,20],[5,18,20],[5,18,22],[5,20,22],[5,20,25]],
-  'Bizeps-Curls Untergriff':[[3,10,12],[3,11,13],[3,12,14],[3,12,14],[4,12,14],[4,13,15],[4,14,16],[4,14,16],[4,15,18],[4,15,18],[4,16,20],[4,18,20]],
-  'Beinheben an Stange':   [[3,8,null],[3,9,null],[3,10,null],[3,11,null],[3,12,null],[4,12,null],[4,13,null],[4,14,null],[4,15,null],[4,15,null],[4,15,null],[4,15,null]],
-  'Dead Hang':              [[3,20,null],[3,25,null],[3,25,null],[3,30,null],[3,30,null],[3,35,null],[3,35,null],[3,40,null],[3,40,null],[3,45,null],[3,45,null],[3,50,null]],
-  // EINHEIT C – Athletik
-  'Kniebeugen':            [[3,15,null],[3,18,null],[3,20,null],[3,20,null],[4,20,null],[4,22,null],[4,22,null],[4,25,null],[4,25,null],[4,25,null],[4,25,null],[4,25,null]],
-  'Bulgarian Split Squats':[[3,8,null],[3,9,null],[3,10,null],[3,10,null],[3,12,null],[3,12,null],[4,12,null],[4,13,null],[4,14,null],[4,14,null],[4,15,null],[4,15,null]],
-  'Glute Bridge':          [[3,12,null],[3,13,null],[3,14,null],[3,15,null],[3,16,null],[4,15,null],[4,16,null],[4,18,null],[4,18,null],[4,20,null],[4,20,null],[4,20,null]],
-  'Wadenheber':            [[3,20,null],[3,22,null],[3,22,null],[3,25,null],[3,25,null],[3,25,null],[4,25,null],[4,25,null],[4,25,null],[4,25,null],[4,25,null],[4,25,null]],
-  'Reverse Crunch':        [[3,10,null],[3,11,null],[3,12,null],[3,13,null],[3,14,null],[3,15,null],[4,14,null],[4,15,null],[4,16,null],[4,17,null],[4,18,null],[4,20,null]],
-  'Seitstütz':             [[3,20,null],[3,25,null],[3,28,null],[3,30,null],[3,32,null],[3,35,null],[4,35,null],[4,38,null],[4,40,null],[4,42,null],[4,45,null],[4,45,null]],
+  // ── EINHEIT A: Oberkörper Push+Pull (Brust & Rücken Fokus)
+  'Liegestütze':              [[3,10,12],[3,12,14],[3,13,15],[4,12,15],[4,14,16],[4,15,18],[4,16,19],[5,16,19],[5,18,21],[5,18,22],[5,20,24],[5,22,26]],
+  'Klimmzüge':                [[3,3,5],[3,3,5],[3,4,6],[4,4,6],[4,5,7],[4,5,7],[4,6,8],[5,6,8],[5,7,9],[5,7,9],[5,8,10],[5,9,12]],
+  'Pike Push-Ups':            [[3,6,8],[3,7,9],[3,8,10],[3,9,11],[3,10,12],[3,11,13],[4,10,13],[4,11,14],[4,12,15],[4,13,15],[4,14,16],[4,15,17]],
+  'Australische Klimmzüge':   [[3,10,12],[3,11,13],[3,12,14],[4,12,14],[4,13,15],[4,14,16],[4,15,18],[4,16,18],[5,16,20],[5,18,20],[5,18,22],[5,20,25]],
+  'Plank':                    [[3,25,null],[3,30,null],[3,35,null],[3,40,null],[3,45,null],[3,50,null],[4,45,null],[4,50,null],[4,55,null],[4,60,null],[4,65,null],[4,75,null]],
+  'Dead Hang':                [[3,20,null],[3,22,null],[3,25,null],[3,28,null],[3,30,null],[3,32,null],[3,35,null],[3,38,null],[3,40,null],[3,42,null],[3,45,null],[3,50,null]],
+
+  // ── EINHEIT B: Oberkörper Push+Pull (Brust & Arme Fokus)
+  'Enge Liegestütze':         [[3,8,10],[3,9,11],[3,10,12],[3,11,13],[4,10,13],[4,11,14],[4,12,15],[4,13,16],[4,14,17],[4,15,18],[4,16,19],[5,15,20]],
+  'Bizeps-Curls Untergriff':  [[3,10,12],[3,11,13],[3,12,14],[3,12,14],[4,12,14],[4,13,15],[4,14,16],[4,14,16],[4,15,18],[4,16,18],[4,17,19],[4,18,20]],
+  'Dips':                     [[3,6,8],[3,7,9],[3,8,10],[3,9,11],[4,8,11],[4,9,12],[4,10,13],[4,11,14],[4,12,15],[4,13,15],[5,12,15],[5,13,16]],
+  'Negative Klimmzüge':       [[3,4,null],[3,4,null],[3,5,null],[3,5,null],[3,5,null],[3,5,null],[3,4,null],[3,4,null],[2,4,null],[2,4,null],[2,3,null],[2,3,null]],
+  'Diamond Push-Ups':         [[3,6,8],[3,7,9],[3,8,10],[3,9,11],[3,10,12],[4,10,12],[4,11,13],[4,12,14],[4,12,15],[4,14,16],[4,15,17],[4,15,18]],
+  'Beinheben an Stange':      [[3,8,null],[3,9,null],[3,10,null],[3,11,null],[3,12,null],[3,13,null],[4,12,null],[4,13,null],[4,14,null],[4,15,null],[4,15,null],[4,15,null]],
+
+  // ── EINHEIT C: Beine + Core + Fettverbrennung
+  'Kniebeugen':               [[3,15,null],[3,18,null],[3,20,null],[3,20,null],[4,20,null],[4,22,null],[4,22,null],[4,25,null],[4,25,null],[4,25,null],[4,25,null],[4,25,null]],
+  'Bulgarian Split Squats':   [[3,8,null],[3,9,null],[3,10,null],[3,10,null],[3,11,null],[3,12,null],[4,11,null],[4,12,null],[4,13,null],[4,14,null],[4,14,null],[4,15,null]],
+  'Glute Bridge':             [[3,12,null],[3,13,null],[3,14,null],[3,15,null],[3,16,null],[4,15,null],[4,16,null],[4,18,null],[4,18,null],[4,20,null],[4,20,null],[4,20,null]],
+  'Mountain Climbers':        [[3,20,null],[3,25,null],[3,30,null],[3,30,null],[3,35,null],[3,40,null],[4,35,null],[4,40,null],[4,45,null],[4,50,null],[4,50,null],[4,60,null]],
+  'Reverse Crunch':           [[3,10,null],[3,11,null],[3,12,null],[3,13,null],[3,14,null],[3,15,null],[4,14,null],[4,15,null],[4,16,null],[4,17,null],[4,18,null],[4,20,null]],
+  'Burpees':                  [[3,5,null],[3,6,null],[3,7,null],[3,8,null],[3,8,null],[3,10,null],[4,8,null],[4,10,null],[4,10,null],[4,12,null],[4,12,null],[4,15,null]],
 };
 
 const TIPS = {
-  'Liegestütze':'Brust Richtung Boden, Körper gerade halten',
-  'Diamond Push-Ups':'Hände unter der Brust — Trizeps Fokus',
-  'Pike Push-Ups':'Hüfte hoch in V-Form — Schulter-Fokus',
-  'Dips':'Stuhl oder Sofa, Ellenbogen nach hinten, tief absenken',
-  'Mountain Climbers':'Schnell und kontrolliert, Rumpf angespannt — Fettverbrennung',
-  'Plank':'Volle Körperspannung, nicht durchhängen (Sekunden)',
-  'Klimmzüge':'Brust zur Stange ziehen, kontrolliert ablassen',
-  'Negative Klimmzüge':'Hochspringen, dann 5 Sek langsam ablassen',
-  'Australische Klimmzüge':'Untergriff = mehr Bizeps-Aktivierung',
-  'Bizeps-Curls Untergriff':'Enge Griffweite, langsame Bewegung, volle Streckung',
-  'Beinheben an Stange':'Beine gestreckt oder angewinkelt — unterer Bauch',
-  'Dead Hang':'Passiv hängen, Griffkraft und Schulter-Mobilität (Sekunden)',
-  'Kniebeugen':'Knie über Zehen, Rücken gerade, tief gehen',
-  'Bulgarian Split Squats':'Hinterer Fuß erhöht — Knie und Quadrizeps schonen',
-  'Glute Bridge':'Hüfte oben halten, Gesäß fest anspannen',
-  'Wadenheber':'Einbeinig für mehr Intensität möglich',
-  'Reverse Crunch':'Langsam und kontrolliert — unterer Bauch',
-  'Seitstütz':'Beide Seiten! Hüfte nicht durchhängen (Sekunden)'
+  'Liegestütze':'Breiter Griff, Brust tief — maximaler Stretch für Muskelaufbau',
+  'Klimmzüge':'Brust zur Stange ziehen, 2 Sek oben halten, kontrolliert ablassen',
+  'Pike Push-Ups':'Hüfte hoch in V-Form, Kopf durch die Arme — Schulter-Fokus',
+  'Australische Klimmzüge':'Untergriff = mehr Bizeps. Brust zur Stange, Körper Brett',
+  'Plank':'Volle Spannung halten — Bauch, Gesäß, alles an (Sekunden)',
+  'Dead Hang':'Passiv hängen, Schultern aktiv — Griffkraft + Dekompression (Sek)',
+  'Enge Liegestütze':'Hände schulterbreit, Ellenbogen nah am Körper — innere Brust & Trizeps',
+  'Bizeps-Curls Untergriff':'Untergriff an Stange, langsam hoch und runter — volle Streckung',
+  'Dips':'Stuhl/Sofa, Ellenbogen nach hinten, tief absenken — Trizeps & untere Brust',
+  'Negative Klimmzüge':'Hochspringen, dann 5 Sek kontrolliert ablassen — maximaler Reiz',
+  'Diamond Push-Ups':'Hände zu einem Dreieck — Trizeps und innere Brust',
+  'Beinheben an Stange':'Beine gestreckt heben, langsam ablassen — unterer Bauch',
+  'Kniebeugen':'Tief gehen, Knie über Zehen, Rücken gerade — Fußball-schonend',
+  'Bulgarian Split Squats':'Hinterer Fuß auf Stuhl, einbeinig — Knie & Achillessehne schonen',
+  'Glute Bridge':'Hüfte oben halten, Gesäß fest anspannen, Schulterblattkante am Boden',
+  'Mountain Climbers':'Schnell und explosiv — Herzrate hoch, Fettverbrennung maximieren',
+  'Reverse Crunch':'Langsam und kontrolliert, Lendenwirbel bleibt am Boden — unterer Bauch',
+  'Burpees':'Vollgas — das effektivste Körpergewichts-Übung für Fettabbau',
 };
 
-const TIMED = new Set(['Plank','Mountain Climbers','Dead Hang','Seitstütz']);
+const TIMED = new Set(['Plank','Dead Hang','Mountain Climbers']);
 
 const DAYS_DEF = [
-  {name:'Einheit A', type:'Push – Brust · Schulter · Trizeps', icon:'💪', letter:'A',
-   exNames:['Liegestütze','Diamond Push-Ups','Pike Push-Ups','Dips','Mountain Climbers','Plank']},
-  {name:'Einheit B', type:'Pull – Rücken · Bizeps · Core', icon:'🔝', letter:'B',
-   exNames:['Klimmzüge','Negative Klimmzüge','Australische Klimmzüge','Bizeps-Curls Untergriff','Beinheben an Stange','Dead Hang']},
-  {name:'Einheit C', type:'Athletik – Beine · Core · Kondition', icon:'⚡', letter:'C',
-   exNames:['Kniebeugen','Bulgarian Split Squats','Glute Bridge','Wadenheber','Reverse Crunch','Seitstütz']}
+  {
+    name:'Einheit A', type:'Oberkörper – Brust & Rücken Fokus', icon:'💪', letter:'A',
+    groups:[
+      {label:'PUSH — Brust & Schultern', exNames:['Liegestütze','Pike Push-Ups','Plank']},
+      {label:'PULL — Rücken & Griffkraft', exNames:['Klimmzüge','Australische Klimmzüge','Dead Hang']},
+    ]
+  },
+  {
+    name:'Einheit B', type:'Oberkörper – Brust & Arme Fokus', icon:'💪', letter:'B',
+    groups:[
+      {label:'PUSH — Brust & Trizeps', exNames:['Enge Liegestütze','Dips','Diamond Push-Ups']},
+      {label:'PULL — Bizeps & Core', exNames:['Bizeps-Curls Untergriff','Negative Klimmzüge','Beinheben an Stange']},
+    ]
+  },
+  {
+    name:'Einheit C', type:'Beine · Core · Fettverbrennung', icon:'⚡', letter:'C',
+    groups:[
+      {label:'BEINE — Fußball-schonend', exNames:['Kniebeugen','Bulgarian Split Squats','Glute Bridge']},
+      {label:'CORE & FAT BURN', exNames:['Mountain Climbers','Reverse Crunch','Burpees']},
+    ]
+  }
 ];
 
 const PRS = [
-  {n:'Klimmzüge',sub:'Max Wdh',ico:'🔝',k:'pr_pu'},
-  {n:'Liegestütze',sub:'Max Wdh',ico:'💪',k:'pr_lh'},
-  {n:'Dips',sub:'Max Wdh',ico:'↕️',k:'pr_di'},
+  {n:'Klimmzüge',sub:'Max Wdh am Stück',ico:'🔝',k:'pr_pu'},
+  {n:'Liegestütze',sub:'Max Wdh am Stück',ico:'💪',k:'pr_lh'},
+  {n:'Dips',sub:'Max Wdh am Stück',ico:'↕️',k:'pr_di'},
   {n:'Dead Hang',sub:'Sekunden',ico:'⏱️',k:'pr_dh'},
-  {n:'Plank',sub:'Sekunden',ico:'🧱',k:'pr_pl'}
+  {n:'Plank',sub:'Sekunden',ico:'🧱',k:'pr_pl'},
+  {n:'Burpees',sub:'Max in 60 Sek',ico:'🔥',k:'pr_bu'}
 ];
 
-const RPE_L = ['','Sehr leicht','Leicht','Moderat','Etwas hart','Anstrengend','Sehr anstrengend','Schwer','Sehr schwer','Maximal','Absolutes Limit'];
+const RPE_L=['','Sehr leicht','Leicht','Moderat','Etwas hart','Anstrengend','Sehr anstrengend','Schwer','Sehr schwer','Maximal','Absolutes Limit'];
 
-let S = {}, W = 1;
+let S={},W=1;
 
-function load(){try{S=JSON.parse(localStorage.getItem('pinofit_v2')||'{}')}catch(e){S={}}}
-function save(){try{localStorage.setItem('pinofit_v2',JSON.stringify(S))}catch(e){}}
+function load(){try{S=JSON.parse(localStorage.getItem('pinofit_v3')||'{}')}catch(e){S={}}}
+function save(){try{localStorage.setItem('pinofit_v3',JSON.stringify(S))}catch(e){}}
 
 function toast(msg){
   const el=document.getElementById('toast');
@@ -388,47 +391,32 @@ function changeWeek(d){W=Math.max(1,Math.min(12,W+d));render();}
 function dk(w,d){return`w${w}d${d}`}
 function ek(w,d,e,f){return`w${w}d${d}e${e}_${f}`}
 
-// ── ADAPTIVE LOGIC ──────────────────────────────────────────
-// Schaut was du letzte Woche geschafft hast und passt diese Woche an.
-// Wenn du die Obergrenze erreichst → mehr Wdh nächste Woche
-// Wenn du die Untergrenze nicht erreichst → Vorgabe bleibt oder sinkt
-function getTarget(week, dayIdx, exIdx) {
-  const exName = DAYS_DEF[dayIdx].exNames[exIdx];
-  const base = BASE[exName];
-  if (!base) return {sets:3, repsStr:'10', adapted:false};
+// ── ADAPTIVE LOGIC ─────────────────────────────────────────
+function getTarget(week,dayIdx,flatExIdx){
+  // Flatten all exercises across groups for this day
+  const allEx=DAYS_DEF[dayIdx].groups.flatMap(g=>g.exNames);
+  const exName=allEx[flatExIdx];
+  const base=BASE[exName];
+  if(!base)return{sets:3,repsStr:'10',adapted:false};
+  const wi=Math.min(week-1,11);
+  let[sets,rMin,rMax]=base[wi];
 
-  const wi = week - 1; // 0-indexed
-  let [sets, rMin, rMax] = base[Math.min(wi, 11)];
-
-  // Ab Woche 2: schaue Vorwochenergebnis
-  if (week >= 2) {
-    const prevReps = parseInt(S[ek(week-1, dayIdx, exIdx, 'reps')]);
-    if (!isNaN(prevReps) && rMax !== null) {
-      // Hat Obergrenze erreicht oder übertroffen → +1–2 Wdh Bonus
-      if (prevReps >= rMax) {
-        rMin = rMax + 1;
-        rMax = rMax + 2;
-      }
-      // Hat Untergrenze nicht erreicht → Vorgabe auf das was er geschafft hat (min 1 weniger)
-      else if (prevReps < rMin - 1) {
-        rMax = prevReps + 1;
-        rMin = Math.max(1, prevReps);
-      }
-    }
-    // Für feste Zahlen (rMax===null): +1 wenn Ziel erreicht, sonst gleich
-    else if (!isNaN(prevReps) && rMax === null) {
-      if (prevReps >= rMin) {
-        rMin = rMin + 1;
+  if(week>=2){
+    const prevReps=parseInt(S[ek(week-1,dayIdx,flatExIdx,'reps')]);
+    if(!isNaN(prevReps)){
+      if(rMax!==null){
+        if(prevReps>=rMax){rMin=rMax+1;rMax=rMax+2;}
+        else if(prevReps<rMin-1){rMax=prevReps+1;rMin=Math.max(1,prevReps);}
       } else {
-        rMin = prevReps > 0 ? prevReps : rMin;
+        if(prevReps>=rMin)rMin=rMin+1;
+        else if(prevReps>0)rMin=prevReps;
       }
     }
   }
-
-  const repsStr = rMax !== null ? `${rMin}–${rMax}` : `${rMin}`;
-  return {sets, repsStr, adapted: week >= 2 && !!S[ek(week-1, dayIdx, exIdx, 'reps')]};
+  const adapted=week>=2&&!!S[ek(week-1,dayIdx,flatExIdx,'reps')];
+  return{sets,repsStr:rMax!==null?`${rMin}–${rMax}`:`${rMin}`,adapted};
 }
-// ─────────────────────────────────────────────────────────────
+// ───────────────────────────────────────────────────────────
 
 function getPhase(w){
   if(w<=4)return{label:'Phase 1 – Fundament',cls:'ph1'};
@@ -483,62 +471,68 @@ function render(){
 
   const list=document.getElementById('day-list');list.innerHTML='';
 
-  DAYS_DEF.forEach((day,i)=>{
-    const isDone=!!S[dk(W,i)];
-    const rpe=S[`rpe_${dk(W,i)}`]||0;
-    const date=S[`date_${dk(W,i)}`]||'';
-    const exDone=day.exNames.filter((_,j)=>S[ek(W,i,j,'done')]).length;
+  DAYS_DEF.forEach((day,di)=>{
+    const isDone=!!S[dk(W,di)];
+    const rpe=S[`rpe_${dk(W,di)}`]||0;
+    const date=S[`date_${dk(W,di)}`]||'';
+    const allEx=day.groups.flatMap(g=>g.exNames);
+    const exDone=allEx.filter((_,j)=>S[ek(W,di,j,'done')]).length;
 
-    const exHtml=day.exNames.map((name,j)=>{
-      const chk=!!S[ek(W,i,j,'done')];
-      const timed=TIMED.has(name);
-      const {sets,repsStr,adapted}=getTarget(W,i,j);
-      const prevReps=W>=2?S[ek(W-1,i,j,'reps')]:'';
-      const prevNote=W>=2?S[ek(W-1,i,j,'note')]:'';
-      const curReps=S[ek(W,i,j,'reps')]||'';
-      const curTime=S[ek(W,i,j,'time')]||'';
-      const curNote=S[ek(W,i,j,'note')]||'';
-      return`<div class="ex-item">
-        <div class="ex-top">
-          <div class="ex-left">
-            <div class="ex-name">${name}</div>
-            <div class="target-row">
-              <div class="target-pill">🎯 ${sets} × ${repsStr}${timed?' Sek':' Wdh'}</div>
-              ${adapted?`<div class="adapt-pill">⚡ Angepasst</div>`:''}
+    // Build exercises HTML with group labels
+    let flatIdx=0;
+    const exHtml=day.groups.map(group=>{
+      const groupHtml=group.exNames.map(name=>{
+        const j=flatIdx++;
+        const chk=!!S[ek(W,di,j,'done')];
+        const timed=TIMED.has(name);
+        const {sets,repsStr,adapted}=getTarget(W,di,j);
+        const prevReps=W>=2?(S[ek(W-1,di,j,'reps')]||''):'';
+        const curReps=S[ek(W,di,j,'reps')]||'';
+        const curTime=S[ek(W,di,j,'time')]||'';
+        const curNote=S[ek(W,di,j,'note')]||'';
+        return`<div class="ex-item">
+          <div class="ex-top">
+            <div class="ex-left">
+              <div class="ex-name">${name}</div>
+              <div class="target-row">
+                <div class="target-pill">🎯 ${sets} × ${repsStr}${timed?' Sek':''}</div>
+                ${adapted?`<div class="adapt-pill">⚡ Angepasst</div>`:''}
+              </div>
+              ${prevReps?`<div class="prev-row">Letzte Woche: <b>${prevReps}</b>${timed?' Sek':' Wdh'}</div>`:''}
+              <div class="ex-tip">${TIPS[name]||''}</div>
             </div>
-            ${prevReps?`<div class="ex-tip" style="color:var(--muted)">Letzte Woche: ${prevReps}${timed?' Sek':' Wdh'}${prevNote?' · '+prevNote.substring(0,40):''}</div>`:''}
-            <div class="ex-tip">${TIPS[name]||''}</div>
+            <button class="ex-chk ${chk?'done':''}" onclick="toggleEx(${W},${di},${j})">${chk?'✓':'○'}</button>
           </div>
-          <button class="ex-chk ${chk?'done':''}" onclick="toggleEx(${W},${i},${j})">${chk?'✓':'○'}</button>
-        </div>
-        <div class="ex-grid">
-          <div class="ex-field">
-            <div class="ex-lbl">${timed?'Zeit (Sek)':'Wdh geschafft'}</div>
-            <input class="ex-inp" type="number" placeholder="${timed?'30':'10'}" value="${timed?curTime:curReps}"
-              onchange="setField(${W},${i},${j},'${timed?'time':'reps'}',this.value)">
+          <div class="ex-grid">
+            <div class="ex-field">
+              <div class="ex-lbl">${timed?'Zeit (Sek)':'Wdh geschafft'}</div>
+              <input class="ex-inp" type="number" placeholder="${timed?repsStr:'10'}" value="${timed?curTime:curReps}"
+                onchange="setField(${W},${di},${j},'${timed?'time':'reps'}',this.value)">
+            </div>
+            <div class="ex-field">
+              <div class="ex-lbl">${timed?'Sätze':'Zeit (Sek)'}</div>
+              <input class="ex-inp" type="number" placeholder="${timed?sets:'–'}" value="${timed?curReps:curTime}"
+                onchange="setField(${W},${di},${j},'${timed?'reps':'time'}',this.value)">
+            </div>
+            <div class="ex-field full">
+              <div class="ex-lbl">Notiz</div>
+              <textarea class="ex-ta" placeholder="Wie lief's? Leicht / schwer?" onchange="setField(${W},${di},${j},'note',this.value)">${curNote}</textarea>
+            </div>
           </div>
-          <div class="ex-field">
-            <div class="ex-lbl">${timed?'Sätze':'Zeit (Sek)'}</div>
-            <input class="ex-inp" type="number" placeholder="${timed?sets:'–'}" value="${timed?curReps:curTime}"
-              onchange="setField(${W},${i},${j},'${timed?'reps':'time'}',this.value)">
-          </div>
-          <div class="ex-field full">
-            <div class="ex-lbl">Notiz</div>
-            <textarea class="ex-ta" placeholder="Wie lief's? Leicht / schwer? Schmerzen?" onchange="setField(${W},${i},${j},'note',this.value)">${curNote}</textarea>
-          </div>
-        </div>
-      </div>`;
+        </div>`;
+      }).join('');
+      return`<div class="ex-group-label">${group.label}</div>${groupHtml}`;
     }).join('');
 
     const rpeHtml=Array.from({length:10},(_,k)=>{
       const v=k+1;
-      return`<button class="rpe-btn ${rpe===v?'sel':''}" data-v="${v}" data-day="${i}" onclick="setRPE(${W},${i},${v})">${v}</button>`;
+      return`<button class="rpe-btn ${rpe===v?'sel':''}" data-v="${v}" data-day="${di}" onclick="setRPE(${W},${di},${v})">${v}</button>`;
     }).join('');
 
     const card=document.createElement('div');
     card.className='day-card'+(isDone?' done':'');
     card.innerHTML=`
-      <div class="day-head" onclick="toggleDay(${i})">
+      <div class="day-head" onclick="toggleDay(${di})">
         <div class="day-badge">${day.icon}<div class="badge-letter">${day.letter}</div></div>
         <div class="day-meta">
           <div class="day-name">${day.name}</div>
@@ -547,7 +541,7 @@ function render(){
         </div>
         <div class="day-right">
           <div class="chev">${isDone?'✓':'›'}</div>
-          <div class="ex-pill">${exDone}/${day.exNames.length}</div>
+          <div class="ex-pill">${exDone}/${allEx.length}</div>
         </div>
       </div>
       <div class="exercises">
@@ -556,12 +550,12 @@ function render(){
           <div>
             <div class="rpe-hdr">
               <div class="rpe-title">Anstrengung (RPE 1–10)</div>
-              <div class="rpe-hint" id="rpe-h-${i}">${rpe?RPE_L[rpe]:''}</div>
+              <div class="rpe-hint" id="rpe-h-${di}">${rpe?RPE_L[rpe]:''}</div>
             </div>
             <div class="rpe-btns">${rpeHtml}</div>
           </div>
           ${!isDone
-            ?`<button class="finish-btn" onclick="completeDay(${W},${i})">✓  Einheit abschließen</button>`
+            ?`<button class="finish-btn" onclick="completeDay(${W},${di})">✓  Einheit abschließen</button>`
             :`<div class="done-banner">✓ Abgeschlossen${rpe?' · RPE '+rpe:''}${date?' · '+date:''}</div>`}
         </div>
       </div>`;
